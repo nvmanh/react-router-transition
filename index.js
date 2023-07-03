@@ -8,7 +8,7 @@ import React, {
 
 import PropTypes from 'prop-types';
 
-import { Route, Switch, matchPath, useLocation } from 'react-router-dom';
+import { Route, Navigate, matchPath, useLocation } from 'react-router-dom';
 
 import TransitionMotion from 'react-motion/lib/TransitionMotion';
 import spring from 'react-motion/lib/spring';
@@ -204,9 +204,9 @@ function AnimatedSwitch({ children, ...routeTransitionProps }) {
 
   return (
     <RouteTransition {...routeTransitionProps}>
-      <Switch key={key.current} location={location}>
+      <Navigate key={key.current} location={location}>
         {children}
-      </Switch>
+      </Navigate>
     </RouteTransition>
   );
 }
